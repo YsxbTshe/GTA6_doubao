@@ -1,0 +1,2 @@
+# Preserve the uploaded HTML's original line endings, including its first ten lines.
+index.html -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

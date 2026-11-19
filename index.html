@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GTA6 自制版</title>
+<style>
+*{margin:0;padding:0;}
+body{overflow:hidden;background:#111;}
+canvas{display:block;margin:auto;border:3px solid #444;}
+#ui{position:absolute;color:#fff;font-size:20px;font-family:sans-serif;top:10px;left:10px;line-height:1.8;}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="原创 2D 城市驾驶游戏，支持步行探索、车辆驾驶、通缉与昼夜变化。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div id="ui" role="region" aria-label="游戏状态">
+  <div class="stat"><span class="label">通缉</span><span id="star" aria-label="0 级通缉">☆☆☆☆☆</span></div>
+  <div class="stat"><span id="mode">步行</span><span><span class="label">速度</span> <span id="speed">0</span></span></div>
+  <span id="time">白天</span>
+  <button id="pause" type="button" aria-pressed="false" aria-keyshortcuts="P">暂停</button>
+</div>
+<div id="help">
+  <div id="hint">靠近车辆后按 E 上车</div>
+  <span id="keyboard-help">WASD / 方向键移动 · E 上下车 · P 暂停</span>
+  <span id="notice" role="status" aria-live="polite"></span>
+</div>
+<div id="touch-controls" role="group" aria-label="触屏操作">
+  <button type="button" data-key="KeyW" aria-label="向上移动或加速">↑</button>
+  <button type="button" data-key="KeyA" aria-label="向左移动或转向">←</button>
+  <button type="button" data-key="KeyS" aria-label="向下移动、刹车或倒车">↓</button>
+  <button type="button" data-key="KeyD" aria-label="向右移动或转向">→</button>
+  <button type="button" data-key="KeyE">上下车</button>
+</div>
+<canvas id="c" aria-label="城市驾驶游戏地图">请使用支持 Canvas 2D 的现代浏览器运行游戏。</canvas>
+<noscript>请启用 JavaScript 后运行游戏。</noscript>
+<script type="module" src="./src/game.js"></script>
+</body>
+</html>
